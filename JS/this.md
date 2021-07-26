@@ -3,7 +3,7 @@
     - 普通函数中this的指向是this执行时的上下文
     - 箭头函数中this的指向是this定义时的上下文
     - this是和执行上下文绑定的，也就是说每个执行上下文中都有this.
-    - 执行上下文
+- #### 执行上下文
         - 全局执行上下文
         - 函数执行上下文
         - eval执行上下文
@@ -54,7 +54,7 @@
         console.log(foo.name); // 'zhazhaliang'？
         console.log(window.name); // 'jsliang'
         ```
-    - this设计缺陷和应对方案
+- #### this设计缺陷和应对方案
         - 嵌套函数中的this不会从外层函数中继承
             1. 解决方法 使用that保存this
             2. 解决方法 使用箭头函数
