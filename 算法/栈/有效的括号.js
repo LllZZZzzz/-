@@ -1,3 +1,4 @@
+// 思路:只处理左半边括号
 // 时间复杂度O(n)
 const isValid = (s)=>{
     const stack = [];
@@ -15,12 +16,3 @@ const isValid = (s)=>{
      });
      return !stack.length&&res
 }
-// var a = [1, 2, 3];
-// var res = a.every((item) => {
-//     console.log(item)
-//     if (item !== 1) {
-//         console.log('进来了')
-//         return false;
-//     }
-// });
-// console.log(res)
