@@ -21,9 +21,15 @@
 // console.log('listen 8080...')
 // app.listen(8080);
 
-
+// 缺点：只能get请求
 // 手写原理很简单就是创建一个script标签把url塞进去 并且在window上定义一个回调函数
 function JSONP({
-    url,params={},callback
-})
+    url,params={},callback,callbackId='cb'
+}){
+    window[callbackId]=callback;
+    const scriptDom = document.createElement('script');
+    const newParams = Object.keys(params).map(item=>`${item}=${params.item}`).join('&');
+    scriptDom.setAttribute('src',`${url}${newParams?`?${newParams}`:''}?${newParams}`);
+    document.body.appendChild(scriptDom);
+};
 // withCredentials: true // 携带跨域cookie
