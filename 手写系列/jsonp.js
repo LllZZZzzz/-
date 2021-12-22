@@ -23,7 +23,6 @@
 
 // 缺点：只能get请求
 // 手写原理很简单就是创建一个script标签把url塞进去 并且在window上定义一个回调函数
-// 123s
 function JSONP({
     url,params={},callback,callbackId='cb'
 }){
