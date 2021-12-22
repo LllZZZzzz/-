@@ -20,7 +20,7 @@
 // })
 // console.log('listen 8080...')
 // app.listen(8080);
-
+// 123
 // 缺点：只能get请求
 // 手写原理很简单就是创建一个script标签把url塞进去 并且在window上定义一个回调函数
 function JSONP({
