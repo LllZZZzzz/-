@@ -39,8 +39,9 @@
 
 - 原理
     - 分析模块 
+        - 构建AST树 （@babel/paser）
+        - 将loader加载 ES6+->ES5 （@babel/core @babel/preset-env）
     - 收集依赖 
-    - 将loader加载->构建AST树
     - 生成bundle文件
     - 从index.js开始执行 根据依赖再去执行别的文件
 
@@ -62,4 +63,10 @@
             "add.js": `exports.default = function(a,b){return a + b}`,
         });
     - AST与模块分析
+        - @babel/paser 代码转换成抽象语法树
+        - @babel/traverse 访问器 找到import/require模块 收集依赖
+        - @babel/core es6+->es5 转化
+        - @babel/preset-env 预设
     - 依赖分析与打包
+        - 根据上一步的依赖关系生成依赖树
+        - 生成bundle.js

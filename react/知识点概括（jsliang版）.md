@@ -56,7 +56,9 @@ vue暂不了解 先不做对比
 #### 组件通讯
     - props - context - redux
 
+....未完成......
 
+#### 日常遇到问题的补充
 - props变化子组件渲染 但是每次父组件render的时候都会给子组件传递新的props导致子组件做一些无效的渲染
     - 如何避免无效渲染
         - props.children
@@ -64,8 +66,6 @@ vue暂不了解 先不做对比
         - 类组建shouldComponentUpdate
         - useCallback/useMemo
 
-
-### 优化
-    - 海量数据优化
-        - 时间分片
-        - 虚拟列表
+- 海量数据优化
+    - 时间分片
+    - 虚拟列表

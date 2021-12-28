@@ -66,9 +66,24 @@ ES10
 
 ES11
 - Promise.allSettled 与Promise.all类似
-- ?. ??
+- ?. ?? ??=可选链和双问号空值赋值运算符 
+    - 双问号：let num = a??b;当a为null或者undefined的时候赋值b
+    - 空值赋值运算符： c??=b;当b为null或者undefined的时候赋值给c
 
 ES12
 - Promise.any 有一个成功则返回这个成功的结果
 - 数字分隔符_ const num = 1_000_000;
 - ||=和&&=
+
+js简写技巧
+
+- 同时声明多个变量时，可简写成一行
+    let a,b=10;
+- 使用||为变量指定默认值
+- 使用解构赋值交换两个变量
+    let x=1,y=2;
+    [x,y]=[y,x]
+- 使用repeat()方法简化重复一个字符串
+    - '哈哈哈'.repeat(100)
+- 双星号代替Math.pow()
+- 双波浪线代替Math.floor()
