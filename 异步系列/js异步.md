@@ -3,7 +3,6 @@
         - 多线程操作dom的时候会发生混乱 即使之后出现的webworker也不允许操作dom
     - 为什么需要异步
         - 单线程 在涉及一些需要等待的程序时可以让下面的程序继续进行而不至于卡死
-<<<<<<< HEAD
     - 实现异步的方式
         - 回调函数（promise）
         - 发布/订阅
@@ -32,12 +31,3 @@
         //  终止 Worker
         worker.terminate();
 - 训练题 还没做。。。。
-=======
-    - 实现异步
-        - 回调函数 （settimeout/ajax/promise...）
-        - 订阅发布者模式 以df为例
--   Event Loop
-    - Event Loop是指浏览器/node为了实现js单线程运行时不会阻塞的一种机制
-    - Event Loop执行过程
-        - 
->>>>>>> 92589afb67c27db0170e0901607d26a74b44d33c
