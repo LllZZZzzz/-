@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dom{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+        body{margin: 0;}
+    </style>
+</head>
+<body>
+    <div id="dom"></div>
+    <script>
+        window.onload=()=>{
+            const element = document.getElementById('dom');
+            const arr = (new Array(100000000)).fill(0);
+            let name=1;
+            for (const i of arr) {
+                name+1;
+            }
+            let time = null;
+            // 这里和我预想的结果不一样
+            const animation = ()=>{
+                let timeStep = new Date().getTime();
+                if(!time) time=timeStep; 
+                let step = timeStep-time;
+                element.style.transform = 'translateX(' + Math.min(0.1 * step, 200) + 'px)';
+                if(step<2000){
+                    requestAnimationFrame(animation)
+                }
+            }
+            requestAnimationFrame(animation);
+            // setTimeout(animation,1)
+        };
+    </script>
+</body>
+</html>
