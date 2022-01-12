@@ -6,7 +6,7 @@
     - 实现异步的方式
         - 回调函数（promise）
         - 发布/订阅
-        - async/await(这个感觉也是回调 不确定)
+        - async/await
 - EventLoop
     - 事件循环是实现异步的基本原理
     - 为了保证js单线程对dom的操作不发生混乱 也要保证一些需要等待的程序不造成页面的卡死 所以有了EventLoop

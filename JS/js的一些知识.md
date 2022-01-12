@@ -1,7 +1,14 @@
-1. js单线程
-- 由于js语言用途的特殊性（操作dom） 注定他是单线程的
-2. js事件循环
-- 不分阶段 先执行微任务（promise、process.nextTick） 再执行宏任务（定时器）
-3. node事件循环
-- 事件循环分为6个阶段
-- 每个阶段的间隙 都会去执行微任务
+- defineProperty
+    - 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，并返回此对象。
+    - 可传入属性描述符
+        - 数据描述符 value writable
+        - 存取描述符 get set
+        - 两者共享 configurable enumerable
+        简而言之 value writeable和get set不共存
+- JS Proxy(代理)
+    - 对目标对象进行包装并返回一个包装后的对象，之后对目标对象的操作都会先经过包装对象
+- vue中的数据劫持就是通过defineProperty和Proxy来实现的 get绑定订阅 set发布订阅
+- WebSocket 服务器推送技术
+    - 为什么需要websocket 
+        - 因为http只能由客户端发起，HTTP 协议做不到服务器主动向客户端推送信息。
+        - 场景：轮询 在服务器有持续的变化 只能在客户端进行轮询请求 轮询的效率低，非常浪费资源（因为必须不停连接，或者HTTP连接始终打开）
