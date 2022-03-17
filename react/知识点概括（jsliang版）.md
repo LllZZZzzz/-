@@ -59,13 +59,13 @@ vue暂不了解 先不做对比
 ....未完成......
 
 #### 日常遇到问题的补充
-- props变化子组件渲染 但是每次父组件render的时候都会给子组件传递新的props导致子组件做一些无效的渲染
+- props变化子组件渲染 原因：每次父组件render的时候都会给子组件传递新的props导致子组件做一些无效的更新（不去进行fiber等对比 只能让state/props不去变化或者用 shouldComponentUpdate阻止进行）
     - 如何避免无效渲染
-        - props.children
-        - React.memo()
+        - props.children 
+        - React.memo() 不会因为props地址变化而更新
         - 类组建shouldComponentUpdate
-        - useCallback/useMemo
-
+        - useMemo  这个不行 组件还是会执行fiber对比根据
+- usecallback并不能真正实现render次数减小
 - 海量数据优化
     - 时间分片
     - 虚拟列表

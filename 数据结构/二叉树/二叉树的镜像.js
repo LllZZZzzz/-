@@ -1,6 +1,14 @@
+// 交换左树和右数
+const mirror = (root)=>{
+    if(!root){return null};
+    let left = root.left;
+    root.left = mirror(root.right);
+    root.right = mirror(left);
+    return root;
+}
 // 叶子节点 完全二叉树 满二叉树 高度（3-0） 深度（0-3） 层级（1-4)
 // 链式存储 数组存储 完全二叉树比较适合数组存储 其他的会浪费空间
-const Node = function(data,left,right){
+const Node = function(data,left=null,right=null){
     this.data = data;
     this.left = left;
     this.right = right;
@@ -18,10 +26,10 @@ Tree.prototype = {
         let current = this.root;
         while(current){
             if(current.data>data){
-                if(!current.left){ current.left = node;return;};
+                if(!current.left){ current.left = node;return};
                 current = current.left;
             }else{
-                if(!current.right){current.right = node;return;};
+                if(!current.right){current.right = node;return};
                 current = current.right;
             }
         }
@@ -137,25 +145,13 @@ Tree.prototype = {
         }
         console.log((leftDeep-rightDeep)?leftDeep:rightDeep)
         return (leftDeep-rightDeep)?leftDeep:rightDeep
-    },
-    minDepth(root){
-        if (!root)return -1;
-        return Math.min(this.minDepth(root.left), this.minDepth(root.right))+ 1
-    },
-    maxDepth(root){
-        if(!root)return -1;
-        return Math.max(this.maxDepth(root.left),this.maxDepth(root.right))+1
     }
 }
 const t = new Tree(3)
 t.insert(4);
-t.insert(5);
-t.insert(3.1);
 t.insert(2);
-t.insert(0);
-t.insert(2.5);
-t.insert(2.1);
-t.insert(2.2);
-console.log(t,t.minDepth(t.root),t.maxDepth(t.root))
+t.insert(1);
+mirror(t.root)
+console.log(t)
 // t.getMax();
 // t.getDeep();
